@@ -1,0 +1,24 @@
+package com.example.repository;
+
+import java.util.Optional;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.example.entity.Bill;
+
+@Repository
+public interface BillRepository extends CrudRepository<Bill, Integer> {
+
+	Optional<Bill> save(Integer bill_id);
+
+
+	
+	
+
+	
+
+	
+	
+
+}
