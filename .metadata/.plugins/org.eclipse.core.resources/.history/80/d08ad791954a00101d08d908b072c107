@@ -1,0 +1,12 @@
+package com.example.SettelmentRepository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.entity.Settelment;
+
+public interface SettlementRepository extends JpaRepository<Settelment,Long>{
+	
+	
+	
+
+}
