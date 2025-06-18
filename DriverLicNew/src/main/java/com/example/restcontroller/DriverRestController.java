@@ -22,20 +22,20 @@ public class DriverRestController {
 	
 	@PostMapping("/saveDriverInfo")
 	public Driver saveDriver(@RequestBody Driver driver) {
-		Driver driver2=	driverService.saveDriver(driver);
-		return driver2;
+		Driver driverResponse=	driverService.saveDriver(driver);
+		return driverResponse;
 	}
 	
 	@PutMapping("/updateDriver")
 	public Driver updateDriver(@RequestBody Driver driver) {
-		Driver driver2=	driverService.saveDriver(driver);
-		return driver2;
+		Driver driverResponse=	driverService.saveDriver(driver);
+		return driverResponse;
 	}
 
 	@GetMapping("/getDriver/{id}")
 	public Optional<Driver> getDriver( @PathVariable("id") Integer id){
-		Optional<Driver> driver2 = driverService.getDriver(id);
-		return driver2;
+		Optional<Driver> driverResponse = driverService.getDriver(id);
+		return driverResponse;
 	}
 	
 	@DeleteMapping("/deleteDriver/{id}")

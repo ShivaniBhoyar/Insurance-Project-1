@@ -18,23 +18,23 @@ public class DriverServiceImpl implements DriverService {
 	
 	@Override
 	public Driver saveDriver(Driver driver) {
-		Driver driver1=	driverRepository.save(driver);
-		return driver1;
+		Driver driverResponse=	driverRepository.save(driver);
+		return driverResponse;
 	}
 
 	@Override
 	public Driver updateDriver(Driver driver) {
-		Driver driver1=	driverRepository.save(driver);
-		return driver1;
+		Driver driverResponse=	driverRepository.save(driver);
+		return driverResponse;
 	}
 
 	@Override
 	public Optional<Driver> getDriver(Integer id) {
-		Optional<Driver> driver1 =	driverRepository.findById(id);
-		 if (driver1.isEmpty()) {
+		Optional<Driver> driverResponse =	driverRepository.findById(id);
+		 if (driverResponse.isEmpty()) {
 		        throw new DriverNotFoundException("Driver Id " + id + " is not found in the database");
 		    }
-		return driver1;
+		return driverResponse;
 			
 	}
 
