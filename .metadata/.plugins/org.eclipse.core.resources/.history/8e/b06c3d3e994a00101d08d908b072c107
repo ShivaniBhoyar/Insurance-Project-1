@@ -1,7 +1,0 @@
-package com.example.settlementserviceimpl;
-
-public interface SettlementServiceImpl implements SettlementService{
-	
-	
-
-}

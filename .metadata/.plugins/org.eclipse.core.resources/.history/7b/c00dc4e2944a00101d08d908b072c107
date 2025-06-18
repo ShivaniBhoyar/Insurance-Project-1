@@ -1,5 +1,0 @@
-package com.example.SettelmentRepository;
-
-public interface SettlementRepository {
-
-}
