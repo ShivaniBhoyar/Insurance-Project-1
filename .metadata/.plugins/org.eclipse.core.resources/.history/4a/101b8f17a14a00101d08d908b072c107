@@ -1,0 +1,9 @@
+spring.application.name=SettlementMicroservicee1
+
+spring.datasource.url=jdbc:mysql://localhost:3306/vishaldb
+spring.datasource.username=root
+spring.datasource.password=root
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+server.port=1111

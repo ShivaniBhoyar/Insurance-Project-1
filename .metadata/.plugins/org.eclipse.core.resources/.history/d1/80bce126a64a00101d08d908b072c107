@@ -1,0 +1,13 @@
+package com.example.SettelmentRepository;
+
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.example.entity.Settelment;
+@Repository
+public interface SettlementRepository extends JpaRepository<Settelment, Long> {
+	Settelment findByClaimId(Long claimId);
+
+}

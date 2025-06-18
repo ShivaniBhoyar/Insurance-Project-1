@@ -1,0 +1,18 @@
+package com.example.restcontroller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.settlementservice.SettelmentService;
+import com.example.settlementserviceimpl.SettlementServiceImpl;
+
+@RestController
+public class SettlementRestController {
+	
+	
+	private SettelmentService settlementService;
+	
+	
+	
+	
+
+}

@@ -1,0 +1,43 @@
+package com.example.settlementserviceimpl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.SettelmentRepository.SettlementRepository;
+import com.example.entity.Settelment;
+import com.example.settlementservice.SettelmentService;
+@Service
+public class SettlementServiceImpl implements SettelmentService{
+	
+	@Autowired
+	private SettlementRepository settlementRepository;
+
+	@Override
+	public Settelment createSettelment(Settelment settelment) {
+		return settlementRepository.save(settelment);
+		 
+	}
+
+	@Override
+	public Settelment getSettelmentByclaimId(Long claimId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Settelment> getAllSettlement() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deletSettelment(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
+}
