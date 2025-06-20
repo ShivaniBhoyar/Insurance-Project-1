@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+
 
 import com.example.entity.Policy;
 import com.example.entity.PolicyPremium;
@@ -15,6 +18,8 @@ import com.example.entity.User;
 import com.example.service.PolicyPremiumService;
 import com.example.service.PolicyService;
 import com.example.service.UserService;
+
+import io.swagger.v3.oas.annotations.Operation;
 
 @RestController
 @RequestMapping("/user")
@@ -36,6 +41,15 @@ public class UserController {
 	}
 
 	@PostMapping("/saveUserPolicyPremium")
+	@Operation(
+	    summary = "Save Employee Data",
+	    description = "Rest API used to store employee data"
+	)
+	@ApiResponses(value = {
+	    @ApiResponse(responseCode = "200", description = "Successful operation"),
+	    @ApiResponse(responseCode = "400", description = "Invalid input"),
+	    @ApiResponse(responseCode = "500", description = "Internal server error")
+	})
 	public User saveUserPolicy(@RequestBody User user) {
 		// save user
 		User userResponse = userService.saveUser(user); // for user details 
