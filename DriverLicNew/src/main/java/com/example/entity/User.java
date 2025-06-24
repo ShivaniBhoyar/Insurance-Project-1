@@ -28,9 +28,11 @@ public class User {
 
 	@OneToMany(mappedBy = "userId")
 	private List<Policy> policyList;
+	
 	@OneToMany(mappedBy = "userId")
 	private List<PolicyPremium> policypremiumList;
-
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -101,6 +103,9 @@ public class User {
 				+ ", mobileNo=" + mobileNo + ", address=" + address + ", policyList=" + policyList
 				+ ", policypremiumList=" + policypremiumList + "]";
 	}
+	
+	
+
 	
 	
 

@@ -14,8 +14,10 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 import com.example.entity.Policy;
 import com.example.entity.PolicyPremium;
+import com.example.entity.PolicySchedule;
 import com.example.entity.User;
 import com.example.service.PolicyPremiumService;
+import com.example.service.PolicyScheduleService;
 import com.example.service.PolicyService;
 import com.example.service.UserService;
 
@@ -33,6 +35,9 @@ public class UserController {
 
 	@Autowired
 	private PolicyPremiumService policypremiumService;
+	
+	@Autowired
+	private PolicyScheduleService policyScheduleService;
 
 	@PostMapping("/saveUsers")
 	public User saveUsers(@RequestBody User user) {
@@ -59,13 +64,18 @@ public class UserController {
 		for (Policy policy : policies) {
 			policy.setUserId(userId);
 			policyService.savePolicy(policy);
+			
+			PolicySchedule policySchedule1	= policy.getPolicySchedule(); // here we fetch the data from policy request body
+			policySchedule1.setPolicyId(policy.getPolicyno()); // set the policyId into pSchedule
+			policyScheduleService.savePolicy(policySchedule1); // save the end date
 		}
-
 		List<PolicyPremium> policypremiums = user.getPolicypremiumList(); // for policy premium details
 		for (PolicyPremium policypremium : policypremiums) {
 			policypremium.setUserId(userId);
 			policypremiumService.savePolicyPremium(policypremium);
 		}
+		
+		
 		return userResponse;
 	}
 
