@@ -6,5 +6,5 @@ import com.example.entity.Claim;
 
 public interface ClaimService {
 
-	public List<Claim> getAllClaims();
+	public List<Claim> getAllClaimsByPolicyId(Integer policyId);
 }

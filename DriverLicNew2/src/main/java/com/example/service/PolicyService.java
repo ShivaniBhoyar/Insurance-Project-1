@@ -6,8 +6,6 @@ import com.example.entity.Policy;
 
 public interface PolicyService {
 	
-	//public Policy savePolicy(Policy policy);
-	
-	public List<Policy> getAllPolicies();
+	public List<Policy> getPoliciesByUserId(Integer userId);
 
 }
